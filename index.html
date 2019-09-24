@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Tips Calculator</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="img-container col-8  animated fadeIn slower 2s">
+                <img src="./img/Illustration.svg" alt="Tips Calculator">
+            </div><!--end of image div-->
+            <div class="form-container col-4 animated slideInRight slow 2.5s">
+                <h2 class="main-heading">
+                    Tips Calculator
+                </h2>
+                <div class="form-bill">
+                    <h2 class="heading">
+                        How much was the bill?
+                    </h2>
+                    <input type="text" class="bill-amount" placeholder="naira">
+                </div><!--Bill amount rating-->
+                <div class="form-bill">
+                    <h2 class="heading">
+                        How many people are sharing the bill?
+                    </h2>
+                    <input type="number" class="bill-sharing" placeholder="people">
+                </div><!--Bill sharing-->
+                <div class="form-bill">
+                    <h2 class="heading">
+                        How was the service?
+                    </h2>
+                    <select class="bill-rating">
+                        <option value="5" selected>5 star</option>
+                        <option value="4">4 star</option>
+                        <option value="3">3 star</option>
+                        <option value="2">2 star</option>
+                        <option value="1">1 star</option>
+                    </select>
+                </div><!--Rating Div-->
+                <button type="submit" class="btn-submit">Calculate!</button><!--SUBMIT BUTTON-->
+                <div class="tip-container">
+                    <div class="tip-container__heading">
+                        <h2 class="heading">
+                            Total Tips:
+                        </h2>
+                        <p class="tip-amount__text">
+                            <span class="tip-amount">0.00</span>naira each.
+                        </p>      
+                </div>
+            </div><!--tips container-->
+            </div><!--end of form div-->
+        </div><!--content wrapper-->
+        <script src="./js/app.js"></script>
+    </body>
+</html>

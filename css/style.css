@@ -1,0 +1,154 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html:root {
+    font-size: 62.5%;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    box-sizing: border-box;
+    color: #363666;
+}
+
+.img-container {
+    text-align: center;
+}
+
+.img-container img {
+    height: 50vh;
+    max-width: 35rem;
+}
+
+.main-heading {
+    font-size: 2.4rem;
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 1.5rem;
+}
+
+.heading {
+    font-size: 1.6rem;
+}
+
+
+
+.form-container {
+    padding: 2rem;
+}
+
+.form-bill {
+    margin-bottom: 1.5rem;
+}
+
+input {
+    outline: none;
+    border: none;
+    border-bottom: solid 1px #363666;
+    padding: 1rem;
+}
+
+.bill-rating {
+    width: 10rem;
+    padding: .5rem;
+    border: none;
+    border-bottom: solid 1px #363666;
+}
+
+[value] {
+    padding: .5rem;
+    background-color: #363666;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-bottom: solid 1px #fff;
+
+}
+
+.btn-submit {
+    width: 10rem;
+    font-size: 1.6rem;
+    background: linear-gradient(to right bottom, #363666, #39396F);
+    color: #fff;
+    padding: .7rem;
+    outline: none;
+    border: none;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 768px) {
+    .img-container img {
+        max-width: 60rem; 
+    }
+
+    .main-heading {
+        font-size: 3.6rem;
+    }
+
+    .heading {
+        font-size: 2.4rem;
+    }
+
+    .btn-submit {
+        font-size: 2.4rem;
+        width: 15rem;
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #wrapper {
+        height: 90vh;
+        padding: 1.5rem;
+        margin: 2.5rem auto;
+    }
+    .img-container {
+        float: left;
+        width: 60%;
+        height: 75vh;
+        margin: 0 3rem;
+    }
+
+    .img-container img {
+        max-width: 100%;
+        height: 90vh;
+    }
+
+    .form-container {
+        float: left;
+        width: 30%;
+        border: solid 1px #363666;
+        height: 75vh;
+        margin: 2rem 0;
+    }
+
+    .form-bill {
+        padding: .8rem;
+    }
+
+    .heading {
+        font-weight: 400;
+        font-size: 1.6rem;
+    }
+
+    .btn-submit {
+        font-size: 1.6rem;
+        margin-top: 0;
+    }
+
+    .tip-container {
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .tip-amount {
+        font-size: 3rem;
+    }
+}
