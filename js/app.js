@@ -3,7 +3,9 @@ var DOMStrings = {
     billAmount: '.bill-amount',
     billSharing: '.bill-sharing',
     billRating: '.bill-rating',
-    button: '.btn-submit'
+    button: '.btn-submit',
+    tipContainer: '.tip-container',
+    errorMessageContainer: '.error-message'
 }
 
 var calculateTips = function(amount, users, rating) {
@@ -37,10 +39,20 @@ var clearFields = function() {
     fieldsArr[0].focus();
 }
 
+var errorMessage = function() {
+    var elment, html;
+    elment = DOMStrings.button;
+    html = '<p class="error-message">Please enter valid inputs</p>'
+    document.querySelector(elment).insertAdjacentHTML('beforebegin', html);
+}
+
+var clearError = function() {
+    document.querySelector(DOMStrings.errorMessageContainer).style.display = 'none';
+}
 
 
 var calculateUserTips = function() {
-    var userBill, userNo, userRating, userTip;
+    var userBill, userNo, userRating, userTip, error;
     //receiving user inputs
     userBill = parseFloat(document.querySelector(DOMStrings.billAmount).value);
     userNo = parseInt(document.querySelector(DOMStrings.billSharing).value);
@@ -48,13 +60,19 @@ var calculateUserTips = function() {
 
     //validate input before calculating tips
     if (userNo > 0 && !isNaN(userBill) && !isNaN(userNo)) {
-    userTip = calculateTips(userBill, userNo, userRating);
-    document.querySelector('.tip-amount').textContent = userTip
-    console.log(userTip);
-    }
+        userTip = calculateTips(userBill, userNo, userRating);
+        document.querySelector('.tip-amount').textContent = userTip
+        clearFields();
+        clearError();
+
+    } else {
+            errorMessage();
+            clearFields();
+            document.querySelector('.tip-amount').textContent = "--";
+        }
 
     //clear User Inputs
-    clearFields();
+   
 }
 
 //setting up event listners
