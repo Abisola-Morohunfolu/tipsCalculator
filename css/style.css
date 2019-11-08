@@ -39,6 +39,8 @@ body {
 
 .form-container {
     padding: 2rem;
+    position: relative;
+    border: 1px red solid;
 }
 
 .form-bill {
@@ -84,7 +86,7 @@ input {
 
 .tip-container {
     text-align: center;
-    padding: 1rem;
+    padding: 2rem;
 }
 
 .tip-amount {
@@ -96,7 +98,17 @@ input {
     font-size: 1.2rem;
     text-align: center;
     margin-bottom: 1rem;
+    color: red;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: .3s all;
 }
+
+.error-message-appear {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
 
 /* MEDIA QUERIES */
 
@@ -146,7 +158,6 @@ input {
         float: left;
         width: 30%;
         border: solid 1px #363666;
-        height: 75vh;
         margin: 2rem 0;
     }
 

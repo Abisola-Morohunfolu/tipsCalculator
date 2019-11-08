@@ -1,11 +1,13 @@
 //storing class names in object
-var DOMStrings = {
+const DOMStrings = {
     billAmount: '.bill-amount',
     billSharing: '.bill-sharing',
     billRating: '.bill-rating',
     button: '.btn-submit',
-    tipContainer: '.tip-container',
-    errorMessageContainer: '.error-message'
+    formContainer: document.querySelector('.form-container'),
+    tipContainer: document.querySelector('.tip-container'),
+    error: document.querySelector('.error-message'),
+    ball: document.querySelector('.ball')
 }
 
 var calculateTips = function(amount, users, rating) {
@@ -40,18 +42,15 @@ var clearFields = function() {
 }
 
 var errorMessage = function() {
-    var elment, html;
-    elment = DOMStrings.button;
-    html = '<p class="error-message">Please enter valid inputs</p>'
-    document.querySelector(elment).insertAdjacentHTML('beforebegin', html);
+    DOMStrings.error.classList.add('error-message-appear');
 }
 
 var clearError = function() {
-    document.querySelector(DOMStrings.errorMessageContainer).style.display = 'none';
+    DOMStrings.error.classList.remove('error-message-appear');
 }
 
 
-var calculateUserTips = function() {
+const calculateUserTips = () => {
     var userBill, userNo, userRating, userTip, error;
     //receiving user inputs
     userBill = parseFloat(document.querySelector(DOMStrings.billAmount).value);
@@ -75,6 +74,7 @@ var calculateUserTips = function() {
    
 }
 
+
 //setting up event listners
 document.querySelector('.btn-submit').addEventListener('click', calculateUserTips);
 
@@ -84,6 +84,4 @@ document.addEventListener('keypress', function(event){
             calculateUserTips();
         }
     });
-
-
 
